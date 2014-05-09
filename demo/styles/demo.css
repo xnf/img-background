@@ -1,0 +1,23 @@
+body {
+    font-family: sans-serif;
+}
+
+h1 {
+    font-size: 6em;
+    max-width: 6em;
+    margin: 1em 0 0 .5em;
+    padding: .25em;
+    line-height: 80%;
+    font-weight: normal;
+    background: rgba(255,255,255,.8) none;
+    border-radius: .25em;
+
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    padding: .5em;
+    background: rgba(255,255,255,.5) none;
+}
+
