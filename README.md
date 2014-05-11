@@ -1,6 +1,6 @@
-# Web Component - Image Background v.1 α
+# Web Component - Image in the background of a website v.1.1 α
 
-It places an image in the background of the website and stretches when resized.
+Place a full size image in the background of the website.
 
 ## Usage
 
@@ -9,6 +9,19 @@ It places an image in the background of the website and stretches when resized.
 Just include the demo/elements/polymer-img-background.html and put a tag in your code like <img-background src="img/1304-Nature_by_wakarii.jpg"></img-background>
 See demo for example
 
+#### 1. Include Polymer Project AND the img-background source
+
+    ```html
+    <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.2.3/platform.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.2.3/polymer.js"></script>
+    ```
+
+#### 2. put the element on your website:
+
+    ```html
+    <img-background src="path-to-your-image"></img-background>
+    ```
+
 ## Todo:
 
 ### X-tag
@@ -16,7 +29,7 @@ See demo for example
 
 ## Why so raw?
 
-I dont know much about github yet, but as Rachel Andrews said - 'push out version 1 asap'
+I don't know much about github yet, but as Rachel Andrews said - 'push out version 1 asap'
 
 ## License
 

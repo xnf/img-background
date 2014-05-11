@@ -1,22 +1,3 @@
 {
-    "name": "img-backend",
-    "version": "1.0.0",
-    "description": "Stretch image as a wallpaper in the background of a site",
-    "main": "dist/img-background.html",
-    "readme": "README.md",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/edgarszagorskis/img-background.git"
-    },
-    "keywords":[
-      "web-components"
-    ],
-    "author": "Edgars Zagorskis",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/edgarszagorskis/img-background/issues"
-    }
+    "private": "true"
 }

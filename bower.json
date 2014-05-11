@@ -1,0 +1,24 @@
+{
+    "name": "img-background",
+    "version": "0.0.5",
+    "description": "Place image as a full size background of the site",
+    "authors": [
+        "Edgars Zagorskis"
+    ],
+    "main": "dist/img-background.html",
+    "readme": "README.md",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/edgarszagorskis/img-background.git"
+    },
+    "keywords":[
+        "web-components"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/edgarszagorskis/img-background/issues"
+    }
+}
