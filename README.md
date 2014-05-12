@@ -11,16 +11,16 @@ See demo for example
 
 #### 1. Include Polymer Project AND the img-background source
 
-    ```html
+    
     <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.2.3/platform.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.2.3/polymer.js"></script>
-    ```
+    
 
 #### 2. put the element on your website:
 
-    ```html
+   
     <img-background src="path-to-your-image"></img-background>
-    ```
+    
 
 ## Todo:
 
