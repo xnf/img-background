@@ -14,7 +14,7 @@
         "type": "git",
         "url": "git://github.com/edgarszagorskis/img-background.git"
     },
-    "keywords":[
+    "keywords": [
         "web-components"
     ],
     "license": "MIT",
