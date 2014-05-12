@@ -1,4 +1,4 @@
-# Web Component - Image in the background of a website v.1.1 α
+# Web Component - Image in the background of a website v.1.0.1 α
 
 Place a full size image in the background of the website.
 
