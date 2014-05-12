@@ -24,12 +24,8 @@ See demo for example
 
 ## Todo:
 
-### X-tag
 ### Vanilla JS
-
-## Why so raw?
-
-I don't know much about github yet, but as Rachel Andrews said - 'push out version 1 asap'
+### tests and builds
 
 ## License
 
