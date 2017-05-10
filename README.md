@@ -1,6 +1,6 @@
 # Web Component - Image in the background of a website v.1.0.2
 
-Place a full size image in the background of the website. [Demo](|http://edgarszagorskis.github.io/img-background/index.html)
+Place a full size image in the background of the website. [Demo](http://edgarszagorskis.github.io/img-background/index.html)
 
 ## Usage
 
