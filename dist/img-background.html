@@ -1,37 +1,103 @@
-<polymer-element name="img-background" attributes="src class">
-    <template>
-        <style>
-            #web-component-img-background {
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: -1;
-                min-height: 100%;
-                min-width: 100%;
+<template id="img-background">
+    <style>
+        #web-component-img-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            min-height: 100%;
+            min-width: 100%;
+        }
+
+        #web-component-img-background.h {
+            width: 100%
+        }
+
+        #web-component-img-background.v {
+            height: 100%
+        }
+    </style>
+    <img id="web-component-img-background">
+</template>
+<script>
+    (function () {
+        // Add a shadow root - from github.com/chris-l/vanilla-components-magic
+        var addShadowRoot = (function () {
+            'use strict';
+            var importDoc, shimStyle;
+
+            importDoc = (document._currentScript || document.currentScript).ownerDocument;
+
+            if (window.ShadowDOMPolyfill) {
+                shimStyle = document.createElement('style');
+                document.head.insertBefore(shimStyle, document.head.firstChild);
             }
 
-            #web-component-img-background.h {
-                width: 100%
-            }
+            return function (obj, idTemplate, tagName) {
+                var template, list;
 
-            #web-component-img-background.v {
-                height: 100%
-            }
-        </style>
-        <img src="{{src}}" id="web-component-img-background" class="{{class}}"/>
-    </template>
-    <script>
-        Polymer('img-background', {
-            ready: function () {
-                var elm = this;
-                var updateImage = function () {
-                    elm.class = (window.outerHeight < window.outerWidth) ? 'h' : 'v';
+                obj.root = obj.createShadowRoot();
+                template = importDoc.getElementById(idTemplate);
+                obj.root.appendChild(template.content.cloneNode(true));
+
+                if (window.ShadowDOMPolyfill) {
+                    list = obj.root.getElementsByTagName('style');
+                    Array.prototype.forEach.call(list, function (style) {
+                        var name = tagName || idTemplate;
+                        if (!template.shimmed) {
+                            shimStyle.innerHTML += style.innerHTML
+                            .replace(/:host\(([^\)]+)\)/gm, name + '$1')
+                            .replace(/:host\b/gm, name)
+                            .replace(/::shadow\b/gm, ' ')
+                            .replace(/::content\b/gm, ' ');
+                        }
+                        style.parentNode.removeChild(style);
+                    });
+                    template.shimmed = true;
                 }
-                window.onresize = function () {
-                    updateImage();
-                }
+            };
+        }());
+
+        // Creates an object based in the HTML Element prototype
+        var element = Object.create(HTMLElement.prototype);
+
+        // Fires when an instance of the element is created
+        element.createdCallback = function () {
+            var elm, updateImage, imgElm;
+
+            addShadowRoot(this, 'img-background');
+            imgElm = this.root.querySelector('#web-component-img-background');
+            imgElm.src = this.getAttribute('src');
+            imgElm.class = this.getAttribute('class') || '';
+
+            elm = this;
+            updateImage = function () {
+                imgElm.classList.remove('h');
+                imgElm.classList.remove('v');
+                imgElm.classList.add(window.outerHeight < window.outerWidth ? 'h' : 'v');
+            };
+            window.onresize = function () {
                 updateImage();
+            };
+            updateImage();
+        };
+
+        // Fires when an attribute was added, removed, or updated
+        element.attributeChangedCallback = function (attr, oldVal, newVal) {
+            var imgElm = this.root.querySelector('#web-component-img-background');
+            switch (attr) {
+            case 'src':
+                imgElm.src = newVal;
+                break;
+            case 'class':
+                imgElm.class = newVal;
+                imgElm.classList.add(window.outerHeight < window.outerWidth ? 'h' : 'v');
             }
+        };
+
+        // Registers custom element
+        document.registerElement('img-background', {
+            prototype: element
         });
-    </script>
-</polymer-element>
+    }());
+</script>
