@@ -1,32 +1,32 @@
-# Web Component - Image in the background of a website v.1.0.1 α
+# Web Component - Image in the background of a website v.1.0.2
 
-Place a full size image in the background of the website.
+Place a full size image in the background of the website. [Demo](|http://edgarszagorskis.github.io/img-background/index.html)
 
 ## Usage
 
-### Polymer:
+### For VanillaJS
 
-Just include the demo/elements/polymer-img-background.html and put a tag in your code like <img-background src="img/1304-Nature_by_wakarii.jpg"></img-background>
-See demo for example
-
-#### 1. Include Polymer Project AND the img-background source
-
-    
-    <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.2.3/platform.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.2.3/polymer.js"></script>
-    
-
-#### 2. put the element on your website:
-
+Put the `<img-background>` web component on your website and include img-background.html, for example, after opening `<body>` tag:
    
-    <img-background src="path-to-your-image"></img-background>
+    <body>
+        <img-background src="path-to-your-image"></img-background>
+        <link rel="import" href="./dist/img-background.html">
+        <!--- rest of site --->
+    </body>
+
+#### For Polymer Project
+
+Put the `<img-background>` web component on your website and include img-background-polymer.html, for example, after opening `<body>` tag:
+
+     <body>
+        <img-background src="path-to-your-image"></img-background>
+        <link rel="import" href="../dist/img-background.html">
+        <!--- rest of site --->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.2.3/platform.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.2.3/polymer.js"></script>
+        <link rel="import" href="./dist/polymer-project/img-background.html">
+    </body>
     
-
-## Todo:
-
-### Vanilla JS
-### tests and builds
-
 ## License
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)

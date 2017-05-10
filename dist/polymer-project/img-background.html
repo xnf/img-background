@@ -1,0 +1,37 @@
+<polymer-element name="img-background" attributes="src class">
+    <template>
+        <style>
+            #web-component-img-background {
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                min-height: 100%;
+                min-width: 100%;
+            }
+
+            #web-component-img-background.h {
+                width: 100%
+            }
+
+            #web-component-img-background.v {
+                height: 100%
+            }
+        </style>
+        <img src="{{src}}" id="web-component-img-background" class="{{class}}"/>
+    </template>
+    <script>
+        Polymer('img-background', {
+            ready: function () {
+                var elm = this;
+                var updateImage = function () {
+                    elm.class = (window.outerHeight < window.outerWidth) ? 'h' : 'v';
+                }
+                window.onresize = function () {
+                    updateImage();
+                }
+                updateImage();
+            }
+        });
+    </script>
+</polymer-element>
